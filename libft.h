@@ -6,13 +6,12 @@
 /*   By: briandri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 13:03:13 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/04 13:04:30 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:57:09 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_
-# define _LIBFT_
+#ifndef LIBFT_H
+# define LIBFT_H
 
-
+int	ft_isalpha(int c);
 #endif
-
