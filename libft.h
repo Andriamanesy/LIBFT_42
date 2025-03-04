@@ -6,7 +6,7 @@
 /*   By: briandri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 13:03:13 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/04 20:54:05 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/04 21:07:19 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
+void    *ft_memset(void *s, int c, size_t n);
 
 #endif
