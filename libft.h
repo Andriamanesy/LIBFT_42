@@ -6,7 +6,7 @@
 /*   By: briandri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 13:03:13 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/05 01:54:14 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:05:24 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-int ft_toupper(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif
