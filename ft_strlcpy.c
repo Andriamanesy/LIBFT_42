@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:18:05 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/06 12:51:02 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/06 13:34:42 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (len_src);
 }

@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 13:09:42 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/06 13:34:25 by briandri         ###   ########.fr       */
+/*   Created: 2025/03/06 15:49:11 by briandri          #+#    #+#             */
+/*   Updated: 2025/03/06 17:26:12 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	len_src;
-	unsigned int	len_dst;
 	unsigned int	i;
-	unsigned int	j;
-
-	len_src = ft_strlen(src);
-	len_dst = ft_strlen(dst);
-	i = 0;
-	j = 0;
-	if (size <= len_dst)
-		return (size + len_src);
-	while (dst[j])
-		j++;
-	while (src[i] && i < (size - len_dst))
-	{
-		dst[j] = src[i];
-		i++;
-		j++;
-	}
-	dst[j] = '\0';
-	return (len_src + len_dst);
+	
+	
 }

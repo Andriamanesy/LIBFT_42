@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 13:09:42 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/06 13:34:25 by briandri         ###   ########.fr       */
+/*   Created: 2025/03/06 14:15:55 by briandri          #+#    #+#             */
+/*   Updated: 2025/03/06 15:29:36 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	len_src;
-	unsigned int	len_dst;
-	unsigned int	i;
-	unsigned int	j;
+	char	*cast;
+	int		last_index;
 
-	len_src = ft_strlen(src);
-	len_dst = ft_strlen(dst);
-	i = 0;
-	j = 0;
-	if (size <= len_dst)
-		return (size + len_src);
-	while (dst[j])
-		j++;
-	while (src[i] && i < (size - len_dst))
-	{
-		dst[j] = src[i];
-		i++;
-		j++;
-	}
-	dst[j] = '\0';
-	return (len_src + len_dst);
+	last_index = ft_strlen(s) - 1;
+	cast = (char *)s;
+	while (cast[last_index] != c && last_index >= 0)
+		last_index--;
+	if (cast[last_index] == c)
+		return (&cast[last_index]);
+	return (0);
 }

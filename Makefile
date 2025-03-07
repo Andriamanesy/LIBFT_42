@@ -6,29 +6,37 @@
 #    By: briandri <briandri@student.42antanana      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 19:02:28 by briandri          #+#    #+#              #
-#    Updated: 2025/03/06 13:12:44 by briandri         ###   ########.fr        #
+#    Updated: 2025/03/07 07:49:13 by briandri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wextra -Wall -Werror -I./include
-SRC = ft_isdigit.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_toupper.c ft_tolower.c ft_atoi.c ft_strlcpy.c ft_strlcat.c
+SRC =	$(shell find . -name "*.c" -type f)
 OBJ := $(SRC:.c=.o)
 
+COLOR_BoldCyan = \033[1;36m
+COLOR_Reset = \033[0m
+COLOR_Red = \033[31m
+
 all : $(NAME)
+	@echo "$(COLOR_BoldCyan)Building $(NAME)..."
 
 $(NAME) : $(OBJ)
-	ar -rv $@ $^
+	@ar -rcs $@ $^
+	@echo "$(COLOR_BoldCyan)Library created: $(NAME)"
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "$(COLOR_Red)Object files cleaned."
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(COLOR_Reset)Library $(NAME) cleaned."
 
 re : fclean all
 
