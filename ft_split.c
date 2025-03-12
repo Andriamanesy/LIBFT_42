@@ -6,7 +6,7 @@
 /*   By: briandri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:07:03 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/12 07:48:00 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/12 11:27:18 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	if (!(new_tab = malloc(sizeof(new_tab) * (ft_count_words(s, c) + 1))))
+	new_tab = malloc(sizeof(new_tab) * (ft_count_words(s, c) + 1));
+	if (!new_tab)
 		return (NULL);
 	while (i < ft_count_words(s, c))
 	{
-		if (!(new_tab[i++] = malloc(sizeof(char *) * (ft_strlen_sep(s, c)) + 1)))
+		new_tab[i++] = malloc(sizeof(char *) * (ft_strlen_sep(s, c)) + 1);
+		if (!new_tab[i])
 			return (NULL);
 	}
 	while (j < ft_count_words(s, c))

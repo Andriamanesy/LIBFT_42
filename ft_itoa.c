@@ -6,7 +6,7 @@
 /*   By: briandri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 07:15:30 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/12 10:44:33 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/12 11:23:57 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ char	*ft_itoa(int n)
 	fin = cmpt + 1;
 	if (cmpt == 0 || n < 0)
 		cmpt ++;
-	if (!(dst = malloc(sizeof(dst) * cmpt + 1)))
+	dst = malloc(sizeof(dst) * cmpt + 1);
+	if (!dst)
 		return (NULL);
 	if (n < 0)
 	{
