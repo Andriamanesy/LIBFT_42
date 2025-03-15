@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: briandri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 09:48:26 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/12 10:46:22 by briandri         ###   ########.fr       */
+/*   Created: 2025/03/15 14:14:49 by briandri          #+#    #+#             */
+/*   Updated: 2025/03/15 14:15:43 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
