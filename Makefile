@@ -6,7 +6,7 @@
 #    By: briandri <briandri@student.42antanana      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 19:02:28 by briandri          #+#    #+#              #
-#    Updated: 2025/03/07 07:49:13 by briandri         ###   ########.fr        #
+#    Updated: 2025/03/15 10:54:14 by briandri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ all : $(NAME)
 	@echo "$(COLOR_BoldCyan)Building $(NAME)..."
 
 $(NAME) : $(OBJ)
-	@ar -rcs $@ $^
+	@ar -r $@ $^
 	@echo "$(COLOR_BoldCyan)Library created: $(NAME)"
 
 %.o : %.c
