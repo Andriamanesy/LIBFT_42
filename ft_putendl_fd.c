@@ -14,16 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned int	i;
-	unsigned int	len;
-
-	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	s[i] = '\n';
-	write (fd, &s[i], 1);
+	ft_putstr_fd(s, fd);
+	write (fd, "\n", 1);
 }

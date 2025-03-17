@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	count(int n)
+static int	count(long n)
 {
 	int	i;
 
@@ -33,26 +33,28 @@ char	*ft_itoa(int n)
 	char	*dst;
 	int		cmpt;
 	int		fin;
+	long	nbr;
 
 	i = 0;
-	cmpt = count(n);
-	fin = cmpt + 1;
-	if (cmpt == 0 || n < 0)
-		cmpt ++;
-	dst = malloc(sizeof(dst) * cmpt + 1);
+	nbr = n;
+	cmpt = count(nbr);
+	if (cmpt == 0 || nbr < 0)
+		cmpt++;
+	fin = cmpt;
+	dst = malloc(sizeof(char) * cmpt + 1);
 	if (!dst)
 		return (NULL);
-	if (n < 0)
+	if (nbr < 0)
 	{
-		n *= -1;
+		nbr *= -1;
 		dst[0] = '-';
 		i++;
 	}
 	while (cmpt > i)
 	{
-		cmpt --;
-		dst[cmpt] = (n % 10) + '0';
-		n /= 10;
+		cmpt--;
+		dst[cmpt] = (nbr % 10) + '0';
+		nbr /= 10;
 	}
 	dst[fin] = '\0';
 	return (dst);
