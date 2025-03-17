@@ -15,13 +15,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int		index;
-	char	*cast;
+	char	*cast_s;
 
 	index = 0;
-	cast = (char *)s;
-	while (cast[index] && cast[index] != c)
+	cast_s = (char *)s;
+	while (cast_s[index] && cast_s[index] !=  (char)c)
 		index++;
-	if (cast[index] == c)
-		return (&cast[index]);
+	if (cast_s[index] == (char)c)
+		return (&cast_s[index]);
 	return (0);
 }

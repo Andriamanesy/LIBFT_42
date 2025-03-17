@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	last_index = ft_strlen(s) - 1;
 	cast = (char *)s;
-	while (cast[last_index] != c && last_index >= 0)
+	if (cast[ft_strlen(s)]  == (char)c)
+		return (cast + ft_strlen(s));
+	while (cast[last_index] != (char)c && last_index >= 0)
 		last_index--;
-	if (cast[last_index] == c)
+	if (cast[last_index] == (char)c)
 		return (&cast[last_index]);
 	return (0);
 }

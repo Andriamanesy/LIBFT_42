@@ -21,8 +21,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	cast = (unsigned char *)s;
 	while (i < n)
 	{
-		if (cast[i] == c)
+		if (c >= 256 && (cast[i] == c % 256))
 			return (&cast[i]);
+		if (cast[i] == c)
+		{
+			return (&cast[i]);
+		}
+			
 		i++;
 	}
 	return (0);
