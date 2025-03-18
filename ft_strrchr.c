@@ -14,16 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*cast;
-	int		last_index;
+	char		*cast;
+	size_t		len;
 
-	last_index = ft_strlen(s) - 1;
+	len = ft_strlen(s);
 	cast = (char *)s;
-	if (cast[ft_strlen(s)]  == (char)c)
-		return (cast + ft_strlen(s));
-	while (cast[last_index] != (char)c && last_index >= 0)
-		last_index--;
-	if (cast[last_index] == (char)c)
-		return (&cast[last_index]);
-	return (0);
+	if ((unsigned char)c == '\0')
+		return (cast + len);
+	while (len > 0)
+	{
+		if (cast[len - 1] == (unsigned char)c)
+			return (cast + len - 1);
+		len--;
+	}
+	return (NULL);
 }

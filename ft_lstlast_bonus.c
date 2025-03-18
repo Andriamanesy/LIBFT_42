@@ -14,9 +14,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
+	t_list	*tmp;
+
+	tmp = lst;
+	if (!tmp)
 		return (NULL);
-	while (lst -> next)
-		lst = lst -> next;
-	return (lst);
+	while (tmp -> next != NULL)
+		tmp = tmp -> next;
+	return (tmp);
 }

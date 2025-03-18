@@ -45,7 +45,7 @@ bonus : $(OBJ) $(OBJ_BONUS)
 
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 	@echo "$(COLOR_Red)Object files cleaned."
 
 fclean : clean

@@ -16,13 +16,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char			*cast_1;
 	char			*cast_2;
-	unsigned int	len_little;
 	unsigned int	i;
 	unsigned int	j;
 
 	cast_1 = (char *)big;
 	cast_2 = (char *)little;
-	len_little = ft_strlen(little);
 	i = 0;
 	j = 0;
 	if (!cast_2[0])
