@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 14:12:33 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/15 14:12:36 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:10:03 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	tmp = *lst;
 	if (!(*lst))
 		*lst = new;
-	else	
+	else
 	{
 		tmp = ft_lstlast(*lst);
 		tmp -> next = new;

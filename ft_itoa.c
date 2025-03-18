@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 14:13:08 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/15 14:13:14 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:28:03 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ static int	count(long n)
 	return (i);
 }
 
+void	extension(int *i, char *c, long *nbr)
+{
+	if (*nbr < 0)
+	{
+		(*nbr) *= -1;
+		*c = '-';
+		(*i) += 1;
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	int		i;
@@ -44,12 +54,7 @@ char	*ft_itoa(int n)
 	dst = malloc(sizeof(char) * cmpt + 1);
 	if (!dst)
 		return (NULL);
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		dst[0] = '-';
-		i++;
-	}
+	extension(&i, &dst[0], &nbr);
 	while (cmpt > i)
 	{
 		cmpt--;

@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 07:51:05 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/18 13:14:03 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:07:55 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	first = 0;
 	while (s1[first] && ft_set(s1[first], set))
-			first++;
+		first++;
 	last = ft_strlen(s1);
-
 	while (last > first && ft_set(s1[last - 1], set))
 		last--;
 	new_str = (char *)malloc(sizeof(*s1) * (last - first + 1));
@@ -40,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 static int	ft_set(char c, char const *set)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -51,4 +50,3 @@ static int	ft_set(char c, char const *set)
 	}
 	return (0);
 }
-

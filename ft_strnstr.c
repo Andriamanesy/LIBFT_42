@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 10:28:46 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/17 14:40:36 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:04:27 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		while (cast_1[i + j] == cast_2[j] && (i + j) < len)
 		{
-			if(cast_2[j + 1] == '\0')
+			if (cast_2[j + 1] == '\0')
 				return (&cast_1[i]);
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 12:05:20 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/07 12:21:06 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:03:31 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(const char *s)
 {
-	int			len_s;
-	size_t 		i;
-	char		*dup;
+	int		len_s;
+	size_t	i;
+	char	*dup;
 
 	len_s = ft_strlen(s);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 14:16:18 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/18 15:40:40 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:09:06 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ char	**ft_split(char const *str, char c)
 static int	ft_count_words(char const *str, char c)
 {
 	int	count_wd;
-	
+
 	if (!*str)
 		return (0);
 	count_wd = 0;
 	while (*str)
 	{
-		while(*str == c)
+		while (*str == c)
 			str++;
 		if (*str)
 			count_wd++;
