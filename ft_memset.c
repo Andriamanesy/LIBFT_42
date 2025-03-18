@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 21:04:29 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/05 00:31:16 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:57:58 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*ptr;
 
 	i = 0;
-	ptr = (unsigned char *) s;
-	if (!ptr)
-		return (0);
+	ptr = (unsigned char *)s;
 	while (i < n)
 	{
-		ptr[i] = c;
+		ptr[i] = (unsigned char)c;
 		i++;
 	}
-	return (s);
+	return ((unsigned char *)s);
 }
