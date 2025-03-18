@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/15 14:19:22 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/15 14:19:24 by briandri         ###   ########.fr       */
+/*   Created: 2025/03/18 13:26:35 by briandri          #+#    #+#             */
+/*   Updated: 2025/03/18 13:26:39 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*nw_element;
 
-	nw_element = malloc(sizeof(t_list));
+	if(!(nw_element = malloc(sizeof(t_list))))
+		return (NULL);
 	nw_element -> content = content;
 	nw_element -> next = NULL;
 	return (nw_element);

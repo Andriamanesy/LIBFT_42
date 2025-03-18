@@ -6,13 +6,14 @@
 #    By: briandri <briandri@student.42antanana      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 19:02:28 by briandri          #+#    #+#              #
-#    Updated: 2025/03/15 10:54:14 by briandri         ###   ########.fr        #
+#    Updated: 2025/03/18 13:41:29 by briandri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 AR = ar
+
 CFLAGS = -Wextra -Wall -Werror -I./include
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
 	ft_memset.c ft_bzero.c ft_memcpy.c ft_toupper.c ft_tolower.c ft_atoi.c ft_memmove.c \
@@ -31,18 +32,17 @@ COLOR_Reset = \033[0m
 COLOR_Red = \033[31m
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-	
-all : $(NAME)
-	@echo "$(COLOR_BoldCyan)Building $(NAME)..."
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME) : $(OBJ)
 	$(AR) -rcs $@ $^
 	@echo "$(COLOR_BoldCyan)Library created: $(NAME)"
 
 bonus : $(OBJ) $(OBJ_BONUS)
-		$(AR) -rcs $(NAME) $^
+	$(AR) -rcs $(NAME) $^
 
+all : $(NAME)
+	@echo "$(COLOR_BoldCyan)Building $(NAME)..."
 
 clean :
 	rm -f $(OBJ) $(OBJ_BONUS)
@@ -54,4 +54,4 @@ fclean : clean
 
 re : fclean all
 
-PHONY : all clean fclean re
+PHONY : all clean fclean re bonus

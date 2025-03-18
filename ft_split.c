@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 14:16:18 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/18 09:52:40 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/15 14:16:22 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,30 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	new_tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	new_tab = malloc(sizeof(new_tab) * (ft_count_words(s, c) + 1));
 	if (!new_tab)
 		return (NULL);
+	while (i < ft_count_words(s, c))
+	{
+		new_tab[i++] = malloc(sizeof(char *) * (ft_strlen_sep(s, c)) + 1);
+		if (!new_tab[i])
+			return (NULL);
+	}
 	while (j < ft_count_words(s, c))
 	{
-		new_tab[j] = malloc(sizeof(char) * (ft_strlen_sep(s, c)) + 1);
-		if (!new_tab[j])
-			return (NULL);
-		k = 0;
-		while (s[i] && s[i] == c)
-			i++;
-		while (s[i] && s[i] != c)
+		while (s[i])
 		{
-			new_tab[j][k++] = s[i++];
+			if (s[i] == c && i == 0)
+				i = 0;
+			else if (s[i] != c)
+				new_tab[j][k++] = s[i];
+			else if ((s[i] == c || s[i] == '\0') && i != 0)
+				new_tab[j][k] = '\0';
+			i++;
 		}
-		new_tab[j][k] = '\0';
+		k = 0;
 		j++;
 	}
-	new_tab[j] = NULL;
 	return (new_tab);
 }
 
@@ -54,12 +59,17 @@ static int	ft_strlen_sep(char const *s, char c)
 
 	i = 0;
 	cmp = 0;
-	while (s[i] != '\0' && s[i] != c)
+	while (s[i] != '\0')
 	{
-		cmp++;
+		if (s[i] == c && i == 0)
+			cmp = 0;
+		else if (s[i] != c)
+			cmp++;
+		else if (s[i] == c)
+			return (cmp);
 		i++;
 	}
-	return (cmp);
+	return (0);
 }
 
 static int	ft_count_words(char const *str, char c)
