@@ -6,7 +6,7 @@
 /*   By: briandri <briandri@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 14:13:08 by briandri          #+#    #+#             */
-/*   Updated: 2025/03/18 16:28:03 by briandri         ###   ########.fr       */
+/*   Updated: 2025/03/19 10:19:17 by briandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	count(long n)
 	return (i);
 }
 
-void	extension(int *i, char *c, long *nbr)
+static void	extension(int *i, char *c, long *nbr)
 {
 	if (*nbr < 0)
 	{
